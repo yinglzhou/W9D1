@@ -8,11 +8,16 @@ class MovingObject {
 
   draw(ctx) {
     ctx.beginPath();
-    // ctx.fillStyle();
-    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI)
-    ctx.stroke();
+    ctx.fillStyle = `${this.color}`;
+    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI);
+    ctx.fill();
+  }
 
-  
+  move(ctx) {
+    let [x, y] = this.vel;
+    this.pos[0] += x;
+    this.pos[1] += y;
+    this.draw(ctx);
   }
 }
 
