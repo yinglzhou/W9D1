@@ -5,6 +5,15 @@ class MovingObject {
     this.radius = options.radius;
     this.color = options.color;
   }
+
+  draw(ctx) {
+    ctx.beginPath();
+    // ctx.fillStyle();
+    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI)
+    ctx.stroke();
+
+  
+  }
 }
 
 // const mo = new MovingObject({
